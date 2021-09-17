@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-title>Admitted Patients</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- This shows the list of all patients admitted/registered -->
+  <ion-card *ngFor = " let patients of allPatientList">
+    <ion-card-header (click)="patientStatus(patients.email)">
+      <ion-card-title>{{patients.name}}</ion-card-title>
+      <ion-card-subtitle>Covid Status : {{patients.covidStatus}}</ion-card-subtitle>
+      <ion-card-subtitle>{{patients.email}}</ion-card-subtitle>
+      <ion-card-subtitle>{{patients.mobile}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-card-subtitle>Admitted at : {{patients.date}}</ion-card-subtitle>
+      <p slot="end"></p>
+      <ion-button (click)="dischargePatient(patients.mobile)">Discharge</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- This button used to add a new patient  -->
+  <ion-button class="addPatient" routerLink="/addnewpatient">add Patient</ion-button>
+
+</ion-content>

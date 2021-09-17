@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon name="arrow-back-outline" slot="start" (click)="back()"></ion-icon>
+    <ion-title>Patient Status</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="form">
+    <ion-item>
+      <ion-label position="floating" >Patient Name</ion-label>
+      <ion-input value="pName" [(ngModel)]="pName" ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Patient Email</ion-label>
+      <ion-input value="pEmail" [(ngModel)]="pEmail" ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="floating">Patient Mobile</ion-label>
+      <ion-input value="000000" [(ngModel)]="pMobile" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="fixed">Age :</ion-label>
+      <ion-input value="pAge" [(ngModel)]="pAge" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label (click)="presentPopover($event)">Covid Status</ion-label>{{pCovidStatus}}
+    </ion-item>
+
+    <ion-button expand="block" (click)="updatePatientData()" >Update Patient</ion-button>
+
+  </div>
+
+</ion-content>

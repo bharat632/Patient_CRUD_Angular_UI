@@ -1,0 +1,22 @@
+ion-content{
+    ion-label{
+        font-size: small;
+    }
+    .form{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 80%;
+
+        ion-item{
+            --highlight-background: #4c8dff;
+        }
+
+        ion-button{
+            --background:#eb445a ;
+            margin-top: 20px;
+
+        }
+    }
+}
